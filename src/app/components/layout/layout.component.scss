@@ -1,0 +1,59 @@
+.menu-spacer{
+  flex: 1 1 auto;
+}
+
+h2{
+  font-size: 20px;
+  margin: 0 10px;
+}
+.example-container {
+  height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.example-sidenav-content {
+
+  margin: 12px;
+  // align-items: center;
+  // justify-content: center;
+}
+.example-sidenav {
+  user-select: none;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+  // background: #ff4081;
+  transition: 3s ease;
+}
+.full-width {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(114, 109, 109);
+  margin: 0 5px;
+}
+.icon{
+  font-size: 16px;
+  color: rgb(214, 64, 147);
+}
+.parent{
+  border-bottom: 1px solid rgb(197, 196, 199);
+  box-shadow:  1px 1px 1px ;
+}
+
+.menu-button {
+  transition: 350ms ease-in-out;
+  transform: rotate(0deg);
+}
+.menu-button.rotated {
+  transform: rotate(180deg);
+}
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  padding-left: 30px;
+}
+.submenu.expanded {
+  transform: scaleY(1);
+}

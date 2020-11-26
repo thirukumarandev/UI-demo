@@ -1,0 +1,43 @@
+
+<!-- Toolbar -->
+
+
+<mat-toolbar color="accent">
+  <mat-toolbar-row >
+  <button mat-mini-fab color="accent" (click)="isExpanded = !isExpanded">
+    <mat-icon >menu</mat-icon> </button>
+    <h2> GoDB Tech</h2>
+
+    <span class="menu-spacer"></span>
+    <div>
+      <button mat-mini-fab color="accent">
+        <mat-icon (click)="logout()">power_settings_new</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-container" autosize>
+    <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true">
+      <mat-nav-list>
+        <mat-list-item class="parent"  routerLink="/user">
+          <span class="full-width"  *ngIf="isExpanded || isShowing">User Details</span>
+          <mat-icon class="icon" mat-list-icon>recent_actors</mat-icon>
+
+        </mat-list-item>
+
+        <mat-list-item class="parent"  routerLink="/file">
+          <span class="full-width" *ngIf="isExpanded || isShowing">File Upload</span>
+          <mat-icon class="icon" mat-list-icon>cloud_upload</mat-icon>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-container>
+

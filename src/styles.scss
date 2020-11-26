@@ -1,1 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* You can add global styles to this file, and also import other style files */
+
+
+
+#login, #register
+{
+    background-color: #3f4e62;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0px;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.headernav
+{
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.panel-area
+{
+    border-radius: 0 !important;
+    background-color: white !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 25rem;
+    min-width: 20rem;
+}
+
+
+.cardheader
+{
+    background-color: white;
+    border: none;
+    color: #16a085;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+
+.cardfooter
+{
+    background-color: #495a72!important;
+    /* text-decoration: underline; */
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+
+}
+
+.loginbutton
+{
+    background-color:#16a085 ;
+    border-color: #16a085;
+    color: white;
+}
+mainpanelheading{display:inline-block;color:#4a555b;font-size:32px;font-weight:300;}
+/* over ride */
+
+#login .mat-form-field ,#register .mat-form-field {
+    width: 100%;
+    min-width: 10rem;
+  }
+
+::placeholder {
+    color: gray;
+    font-style: italic;
+    font-size: 12px;
+  }
+
+.text-muted{    color: #95a2a9;}
+.pull-right{    float: right !important;}
+.pull-rightFlex{justify-content: flex-end;}
+.text-center{    text-align: center;}
+
+.text-light{    color: #f8f9fa!important;font-weight:300 !important}
+
+.mt-4{margin-top: 2rem;}
+.mb-4{margin-bottom: 2rem;}
+.ml-4{margin-left: 2rem;}
+.mr-4{margin-right: 2rem;}
+.pr-0{padding-right: 0px !important;}
+.font-1{font-size: 1rem !important;}
+.font-weight-500{font-weight: 500;}
+.height-3{height: 3rem !important;}
+.pt-0{padding-top: 0px !important;}
+
+
+.cardbody{padding: 1.25rem;}
+
+.alert{padding: 15px;margin-bottom: 20px;border: 1px solid transparent;border-radius: 4px; }
+.alert-danger{color: #a94442;background-color: #f2dede;border-color: #ebccd1;}
+.alert-success{color:#3c763d;background-color: #dff0d8;border-color: #d6e9c6;}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+

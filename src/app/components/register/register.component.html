@@ -1,0 +1,156 @@
+<div id="register">
+  <div class="text-center mt-4 mb-4" id="titlecontent">
+    <h1 class="text-light headernav">GoDB TECH</h1>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="panel-area">
+      <mat-card-title class="cardheader">Register</mat-card-title>
+      <mat-card-content class="cardbody">
+
+        <form [formGroup]="registerForm">
+          <mat-form-field appearance="standard">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput formControlName="frstNm" required />
+            <div *ngIf="submitted && getSignUpForm.frstNm.errors">
+              <mat-error *ngIf="getSignUpForm.frstNm.errors.required"
+                >First Name is required</mat-error
+              >
+            </div>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput formControlName="lstNm" required />
+            <div *ngIf="submitted && getSignUpForm.lstNm.errors">
+              <mat-error *ngIf="getSignUpForm.lstNm.errors.required"
+                >Last Name is required</mat-error
+              >
+            </div>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Email ID</mat-label>
+            <input type="email" matInput formControlName="emailID" required />
+            <div *ngIf="submitted && getSignUpForm.emailID.errors">
+              <mat-error *ngIf="getSignUpForm.emailID.errors.required"
+                >email ID is required</mat-error
+              >
+              <mat-error *ngIf="getSignUpForm.emailID.errors.pattern"
+                >Please enter valid email ID</mat-error
+              >
+            </div>
+          </mat-form-field>
+
+          <mat-form-field appearance="standard">
+            <mat-label>Mobile Number</mat-label>
+            <input type="text" matInput formControlName="mobileNo" required />
+            <div *ngIf="submitted && getSignUpForm.mobileNo.errors">
+              <mat-error *ngIf="getSignUpForm.mobileNo.errors.required"
+                >Mobile Number is required</mat-error
+              >
+              <mat-error *ngIf="getSignUpForm.mobileNo.errors.minlength"
+                >Mobile Number has less than 10 digits</mat-error
+              >
+              <mat-error *ngIf="getSignUpForm.mobileNo.errors.maxlength"
+                >Mobile Number has more than 10 digits</mat-error
+              >
+              <mat-error *ngIf="getSignUpForm.mobileNo.errors.pattern"
+                >Please enter valid mobile number</mat-error
+              >
+            </div>
+          </mat-form-field>
+
+          <div>
+            <label id="example-radio-group-label">Gender </label>
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="radio-group"
+            >
+              <mat-radio-button
+                class="radio-button"
+                style="margin: 0 10px;"
+                *ngFor="let gender of genders"
+                [value]="gender"
+              >
+                {{ gender }}
+              </mat-radio-button>
+            </mat-radio-group>
+            <div *ngIf="submitted && getSignUpForm.address.errors">
+              <mat-error *ngIf="getSignUpForm.gender.errors.required"
+                >Gender is Required</mat-error
+              >
+            </div>
+          </div>
+
+          <mat-form-field appearance="standard">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address"></textarea>
+            <div *ngIf="submitted && getSignUpForm.address.errors">
+              <mat-error *ngIf="getSignUpForm.address.errors.required"
+                >Address is Required</mat-error
+              >
+            </div>
+          </mat-form-field>
+
+          <mat-form-field appearance="standard">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="psWrd" required />
+            <mat-hint>Min 8 characters</mat-hint>
+            <div *ngIf="submitted && getSignUpForm.psWrd.errors">
+              <mat-error *ngIf="getSignUpForm.psWrd.errors.required"
+                >Password is Required</mat-error
+              >
+              <mat-error *ngIf="getSignUpForm.psWrd.errors.minlength"
+                >Password must be at least 6 characters</mat-error
+              >
+              <mat-error *ngIf="getSignUpForm.psWrd.errors.maxlength"
+                >Password can haev maximum 10 characters</mat-error
+              >
+            </div>
+          </mat-form-field>
+
+          <mat-form-field appearance="standard">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              type="password"
+              matInput
+              formControlName="conPassword"
+              required
+            />
+            <div *ngIf="submitted && registerForm.errors?.notSame">
+              <mat-error *ngIf="registerForm.errors.notSame"
+                >Password and Confirm password does not match</mat-error
+              >
+            </div>
+          </mat-form-field>
+
+          <div>
+            <mat-checkbox formControlName="terms">
+              I agree to the
+              <a routerLink=""> Terms of Service</a> &
+              <a routerLink="">Privacy Policy</a>
+            </mat-checkbox>
+            <div *ngIf="submitted && getSignUpForm.terms.errors">
+              <mat-error>Terms and Condition is required</mat-error>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+      <div class="cardfooter">
+        <button
+          routerLink="/login"
+          mat-raised-button
+          color="warn"
+        >
+          Back
+        </button>
+        <button
+[disabled]="loading"
+          mat-raised-button
+          class="pull-right loginbutton"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

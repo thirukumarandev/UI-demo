@@ -1,0 +1,41 @@
+<div id="login">
+  <div class="text-center mt-4 mb-4" id="tittlecontent">
+      <h1 class="text-light headernav">GoDB TECH</h1>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="panel-area">
+          <mat-card-title class="cardheader">{{currentScreen}}</mat-card-title>
+          <mat-card-content class="cardbody">
+              <div *ngIf="isError">
+                  <div class="alert alert-danger">{{errorText}}</div>
+              </div>
+              <div *ngIf="isSuccess">
+                  <div class="alert alert-success">{{successText}}</div>
+              </div>
+              <form *ngIf="currentScreen=='Log In'" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                  <mat-form-field appearance="outline">
+                      <mat-label>User Name</mat-label>
+                      <input type="text" matInput formControlName="usrNm">
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                      <mat-label>Password</mat-label>
+                      <input type="password" matInput formControlName="pasWd" autocomplete="off">
+                  </mat-form-field>
+
+                  <div class="form-group">
+                      <button [disabled]="loading" class=" loginbutton" mat-raised-button>
+                          Login
+                      </button>
+
+                  </div>
+              </form>
+
+          </mat-card-content>
+          <div class="text-center cardfooter">
+              <a routerLink="/register" class="regbtn">CREATE AN ACCOUNT</a>
+          </div>
+
+      </mat-card>
+  </div>
+</div>
